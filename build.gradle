@@ -27,6 +27,11 @@ dependencies {
     implementation group: 'javax.inject', name: 'javax.inject', version: '1'
     // https://mvnrepository.com/artifact/org.jboss.weld.servlet/weld-servlet
     implementation group: 'org.jboss.weld.servlet', name: 'weld-servlet', version: '2.4.8.Final'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+// https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils
+    implementation group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.4'
+
 }
 
 test {

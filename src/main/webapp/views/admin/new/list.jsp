@@ -89,7 +89,7 @@
 											<input type="hidden" value="" id="maxPageItem" name="maxPageItem"/>
 											<input type="hidden" value="" id="sortName" name="sortName"/>
 											<input type="hidden" value="" id="sortBy" name="sortBy"/>
-											<input type="hidden" value="" id="type" name="type"/>
+<%--											<input type="hidden" value="" id="type" name="type"/>--%>
 										</div>
 									</div>
 								</div>
@@ -109,12 +109,14 @@
 				window.pagObj = $('#pagination').twbsPagination({
 					startPage:currentPage,
 					totalPages: totalPage,
-					visiblePages: limit,
+					visiblePages: 10,
 
 					onPageClick: function (event, page) {
 						//
-						if (currentPage!=page){
+						if (currentPage!==page){
 							$('#maxPageItem').val(limit);
+							$('#sortName').val("title");
+							$('#sortBy').val("desc");
 							$('#page').val(page);
 							$('#formSubmit').submit();
 						}
