@@ -9,7 +9,8 @@ public interface INewService {
 
 //	NewModel update(NewModel updateNew);
 //	void delete(long[] ids);
-	List<NewModel> findAll();
-//	int getTotalItem();
+	List<NewModel> findAll(Integer offset, Integer limit);
+	int getTotalItem();
 //	NewModel findOne(long id);
+
 }

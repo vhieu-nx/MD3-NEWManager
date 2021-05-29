@@ -103,7 +103,7 @@
 		<script type="text/javascript">
 			$(function () {
 				let totalPage = ${model.totalPage};
-				<%--let visiblePages = ${model.maxPageItem};--%>
+				let visiblePages = 10;
 				let  currentPage = ${model.page};
 				let limit = 2;
 				window.pagObj = $('#pagination').twbsPagination({
@@ -113,9 +113,12 @@
 
 					onPageClick: function (event, page) {
 						//
-						$('#maxPageItem').val(limit);
-						$('#page').val(page);
-						$('#formSubmit').submit();
+						if (currentPage!=page){
+							$('#maxPageItem').val(limit);
+							$('#page').val(page);
+							$('#formSubmit').submit();
+						}
+
 					}
 				}).on('page', function (event, page) {
 					console.info(page + ' (from event listening)');

@@ -2,11 +2,7 @@ package com.codegym.controller.admin;
 
 import com.codegym.constant.SystemConstant;
 import com.codegym.model.NewModel;
-
-import com.codegym.service.ICategoryService;
 import com.codegym.service.INewService;
-
-
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,7 +19,20 @@ public class NewController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NewModel model = new NewModel();
-		model.setListResult(newService.findAll());
+		String page  = request.getParameter("page");
+		String maxPageItem  = request.getParameter("maxPageItem");
+		if (page != null){
+			model.setPage(Integer.parseInt(page));
+		}else {
+			model.setPage(1);
+		}
+		if (maxPageItem != null){
+			model.setMaxPageItem(Integer.parseInt(maxPageItem));
+		}
+		Integer offset = (model.getPage() - 1 ) * model.getMaxPageItem();
+		model.setListResult(newService.findAll(offset,model.getMaxPageItem()));
+		model.setTotalItem(newService.getTotalItem());
+		model.setTotalPage((int) Math.ceil((double)model.getTotalItem()/model.getMaxPageItem()));
 		request.setAttribute(SystemConstant.MODEL,model);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/new/list.jsp");
 		rd.forward(request, response);

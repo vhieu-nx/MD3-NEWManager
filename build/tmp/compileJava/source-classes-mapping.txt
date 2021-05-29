@@ -24,25 +24,25 @@ com/codegym/model/NewModel.java
  com.codegym.model.NewModel
 com/codegym/mapper/NewMapper.java
  com.codegym.mapper.NewMapper
-com/codegym/dao/INewDAO.java
- com.codegym.dao.INewDAO
-com/codegym/model/AbstractModel.java
- com.codegym.model.AbstractModel
-com/codegym/dao/impl/NewDAO.java
- com.codegym.dao.impl.NewDAO
-com/codegym/model/UserModel.java
- com.codegym.model.UserModel
-com/codegym/controller/admin/NewController.java
- com.codegym.controller.admin.NewController
-com/codegym/service/impl/NewService.java
- com.codegym.service.impl.NewService
-com/codegym/model/RoleModel.java
- com.codegym.model.RoleModel
-com/codegym/model/CategoryModel.java
- com.codegym.model.CategoryModel
-com/codegym/service/INewService.java
- com.codegym.service.INewService
 com/codegym/mapper/UserMapper.java
  com.codegym.mapper.UserMapper
+com/codegym/model/AbstractModel.java
+ com.codegym.model.AbstractModel
+com/codegym/model/CategoryModel.java
+ com.codegym.model.CategoryModel
+com/codegym/model/UserModel.java
+ com.codegym.model.UserModel
+com/codegym/model/RoleModel.java
+ com.codegym.model.RoleModel
 com/codegym/mapper/CategoryMapper.java
  com.codegym.mapper.CategoryMapper
+com/codegym/service/impl/NewService.java
+ com.codegym.service.impl.NewService
+com/codegym/service/INewService.java
+ com.codegym.service.INewService
+com/codegym/dao/INewDAO.java
+ com.codegym.dao.INewDAO
+com/codegym/dao/impl/NewDAO.java
+ com.codegym.dao.impl.NewDAO
+com/codegym/controller/admin/NewController.java
+ com.codegym.controller.admin.NewController
