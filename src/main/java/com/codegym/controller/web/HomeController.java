@@ -25,11 +25,17 @@ public class HomeController extends HttpServlet {
 	private IUserService userService;
 //
 //
-//	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
+	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String  action = request.getParameter("action");
 		if (action != null && action.equals("login")){
+			String message  = request.getParameter("message");
+			String alert  = request.getParameter("alert");
+			if (message!= null & alert!= null){
+				request.setAttribute("message",resourceBundle.getString(message));
+				request.setAttribute("alert",alert);
+			}
 			RequestDispatcher rd = request.getRequestDispatcher("/views/login.jsp");
 			rd.forward(request, response);
 		}else if (action != null && action.equals("logout")){
@@ -59,7 +65,7 @@ public class HomeController extends HttpServlet {
 					response.sendRedirect(request.getContextPath()+ "/admin-home");
 				}
 			}else{
-				response.sendRedirect(request.getContextPath()+ "/trang-chu?action=login");
+				response.sendRedirect(request.getContextPath()+ "/trang-chu?action=login&message=username_password_invalid&alert=danger");
 			}
 		}
 //			model = userService.findByUserNameAndPasswordAndStatus(model.getUserName(), model.getPassword(), 1);

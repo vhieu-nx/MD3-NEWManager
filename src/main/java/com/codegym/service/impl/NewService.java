@@ -26,25 +26,23 @@ public class NewService implements INewService {
 
 	@Override
 	public NewModel save(NewModel newModel) {
-//		newModel.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-//		CategoryModel category = categoryDAO.findOneByCode(newModel.getCategoryCode());
-//		newModel.setCategoryId(category.getId());
-//		Long newId = newDao.save(newModel);
-//		return newDao.findOne(newId);
-		return  null;
+		newModel.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+		CategoryModel category = categoryDAO.findOneByCode(newModel.getCategoryCode());
+		newModel.setCategoryId(category.getId());
+		Long newId = newDao.save(newModel);
+		return newDao.findOne(newId);
 	}
 
 	@Override
 	public NewModel update(NewModel updateNew) {
-//		NewModel oldNew = newDao.findOne(updateNew.getId());
-//		updateNew.setCreatedDate(oldNew.getCreatedDate());
-//		updateNew.setCreatedBy(oldNew.getCreatedBy());
-//		updateNew.setModifiedDate(new Timestamp(System.currentTimeMillis()));
-//		CategoryModel category = categoryDAO.findOneByCode(updateNew.getCategoryCode());
-//		updateNew.setCategoryId(category.getId());
-//		newDao.update(updateNew);
-//		return newDao.findOne(updateNew.getId());
-		return null;
+		NewModel oldNew = newDao.findOne(updateNew.getId());
+		updateNew.setCreatedDate(oldNew.getCreatedDate());
+		updateNew.setCreatedBy(oldNew.getCreatedBy());
+		updateNew.setModifiedDate(new Timestamp(System.currentTimeMillis()));
+		CategoryModel category = categoryDAO.findOneByCode(updateNew.getCategoryCode());
+		updateNew.setCategoryId(category.getId());
+		newDao.update(updateNew);
+		return newDao.findOne(updateNew.getId());
 	}
 
 	@Override
@@ -68,11 +66,10 @@ public class NewService implements INewService {
 
     @Override
     public NewModel findOne(long id) {
-//		NewModel newModel = newDao.findOne(id);
-//		CategoryModel categoryModel = categoryDAO.findOne(newModel.getCategoryId());
-//		newModel.setCategoryCode(categoryModel.getCode());
-//        return newModel;
-		return null;
+		NewModel newModel = newDao.findOne(id);
+		CategoryModel categoryModel = categoryDAO.findOne(newModel.getCategoryId());
+		newModel.setCategoryCode(categoryModel.getCode());
+        return newModel;
     }
 
 }

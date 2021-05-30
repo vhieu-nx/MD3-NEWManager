@@ -23,8 +23,10 @@ public class NewController extends HttpServlet {
 	private INewService newService;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		//refactor dung FormUtils
 		NewModel model = FormUtil.toModel(NewModel.class, request);
+//		if (model.getType().equals(SystemConstant.LIST))
 				//code chua refactor
 //				new NewModel();
 //		String page  = request.getParameter("page");

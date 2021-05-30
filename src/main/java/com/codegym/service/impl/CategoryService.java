@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 public class CategoryService implements ICategoryService {
-	//public categoryservice(){categoryDao = new categoryDao()}
+//	public CategoryService(){categoryDao = new ca();}
 
 	@Inject
 	private ICategoryDAO categoryDao;

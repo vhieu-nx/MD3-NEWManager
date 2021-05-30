@@ -1,11 +1,11 @@
-com/codegym/dao/impl/CategoryDAO.java
- com.codegym.dao.impl.CategoryDAO
+com/codegym/utils/SessionUtil.java
+ com.codegym.utils.SessionUtil
 com/codegym/model/CategoryModel.java
  com.codegym.model.CategoryModel
-com/codegym/service/impl/CategoryService.java
- com.codegym.service.impl.CategoryService
-com/codegym/dao/ICategoryDAO.java
- com.codegym.dao.ICategoryDAO
+com/codegym/dao/impl/UserDAO.java
+ com.codegym.dao.impl.UserDAO
+com/codegym/dao/impl/AbstractDAO.java
+ com.codegym.dao.impl.AbstractDAO
 com/codegym/model/AbstractModel.java
  com.codegym.model.AbstractModel
 com/codegym/service/ICategoryService.java
@@ -16,10 +16,10 @@ com/codegym/utils/HttpUtil.java
  com.codegym.utils.HttpUtil
 com/codegym/mapper/CategoryMapper.java
  com.codegym.mapper.CategoryMapper
-com/codegym/dao/impl/AbstractDAO.java
- com.codegym.dao.impl.AbstractDAO
-com/codegym/controller/admin/NewController.java
- com.codegym.controller.admin.NewController
+com/codegym/dao/impl/NewDAO.java
+ com.codegym.dao.impl.NewDAO
+com/codegym/filter/AuthorizationFilter.java
+ com.codegym.filter.AuthorizationFilter
 com/codegym/model/CommentModel.java
  com.codegym.model.CommentModel
 com/codegym/model/NewModel.java
@@ -46,23 +46,25 @@ com/codegym/paging/PageRequest.java
  com.codegym.paging.PageRequest
 com/codegym/sort/Sorter.java
  com.codegym.sort.Sorter
-com/codegym/service/impl/NewService.java
- com.codegym.service.impl.NewService
+com/codegym/controller/web/HomeController.java
+ com.codegym.controller.web.HomeController
 com/codegym/service/INewService.java
  com.codegym.service.INewService
 com/codegym/dao/INewDAO.java
  com.codegym.dao.INewDAO
-com/codegym/dao/impl/NewDAO.java
- com.codegym.dao.impl.NewDAO
+com/codegym/service/impl/UserService.java
+ com.codegym.service.impl.UserService
 com/codegym/service/IUserService.java
  com.codegym.service.IUserService
 com/codegym/dao/IUserDAO.java
  com.codegym.dao.IUserDAO
-com/codegym/dao/impl/UserDAO.java
- com.codegym.dao.impl.UserDAO
-com/codegym/service/impl/UserService.java
- com.codegym.service.impl.UserService
-com/codegym/controller/web/HomeController.java
- com.codegym.controller.web.HomeController
-com/codegym/utils/SessionUtil.java
- com.codegym.utils.SessionUtil
+com/codegym/dao/impl/CategoryDAO.java
+ com.codegym.dao.impl.CategoryDAO
+com/codegym/service/impl/NewService.java
+ com.codegym.service.impl.NewService
+com/codegym/service/impl/CategoryService.java
+ com.codegym.service.impl.CategoryService
+com/codegym/dao/ICategoryDAO.java
+ com.codegym.dao.ICategoryDAO
+com/codegym/controller/admin/NewController.java
+ com.codegym.controller.admin.NewController
