@@ -18,8 +18,8 @@ com/codegym/mapper/CategoryMapper.java
  com.codegym.mapper.CategoryMapper
 com/codegym/dao/impl/AbstractDAO.java
  com.codegym.dao.impl.AbstractDAO
-com/codegym/controller/web/HomeController.java
- com.codegym.controller.web.HomeController
+com/codegym/controller/admin/NewController.java
+ com.codegym.controller.admin.NewController
 com/codegym/model/CommentModel.java
  com.codegym.model.CommentModel
 com/codegym/model/NewModel.java
@@ -54,5 +54,15 @@ com/codegym/dao/INewDAO.java
  com.codegym.dao.INewDAO
 com/codegym/dao/impl/NewDAO.java
  com.codegym.dao.impl.NewDAO
-com/codegym/controller/admin/NewController.java
- com.codegym.controller.admin.NewController
+com/codegym/service/IUserService.java
+ com.codegym.service.IUserService
+com/codegym/dao/IUserDAO.java
+ com.codegym.dao.IUserDAO
+com/codegym/dao/impl/UserDAO.java
+ com.codegym.dao.impl.UserDAO
+com/codegym/service/impl/UserService.java
+ com.codegym.service.impl.UserService
+com/codegym/controller/web/HomeController.java
+ com.codegym.controller.web.HomeController
+com/codegym/utils/SessionUtil.java
+ com.codegym.utils.SessionUtil
