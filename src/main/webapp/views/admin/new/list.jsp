@@ -1,5 +1,5 @@
 <%@include file="/common/taglib.jsp"%>
-<%--<c:url var="APIurl" value="/api-admin-new"/>--%>
+<c:url var="APIurl" value="/api-admin-new"/>
 <c:url var ="NewURL" value="/admin-new"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -89,7 +89,7 @@
 											<input type="hidden" value="" id="maxPageItem" name="maxPageItem"/>
 											<input type="hidden" value="" id="sortName" name="sortName"/>
 											<input type="hidden" value="" id="sortBy" name="sortBy"/>
-<%--											<input type="hidden" value="" id="type" name="type"/>--%>
+											<input type="hidden" value="" id="type" name="type"/>
 										</div>
 									</div>
 								</div>
@@ -118,6 +118,7 @@
 							$('#sortName').val("title");
 							$('#sortBy').val("desc");
 							$('#page').val(page);
+							$('#type').val("list");
 							$('#formSubmit').submit();
 						}
 
@@ -126,7 +127,31 @@
 					console.info(page + ' (from event listening)');
 				});
 			});
+            $("#btnDelete").click(function() {
+            				let data = {};
+            				let ids = $('tbody input[type=checkbox]:checked').map(function () {
+            		            return $(this).val();
+            		        }).get();
+            				data['ids'] = ids;
+            				deleteNew(data);
+            			});
+
+            			function deleteNew(data) {
+            		        $.ajax({
+            		            url: '${APIurl}',
+            		            type: 'DELETE',
+            		            contentType: 'application/json',
+            		            data: JSON.stringify(data),
+            		            success: function (result) {
+            		                window.location.href = "${NewURL}?type=list&maxPageItem=2&page=1&message=delete_success";
+            		            },
+            		            error: function (error) {
+            		            	window.location.href = "${NewURL}?type=list&maxPageItem=2&page=1&message=error_system";
+            		            }
+            		        });
+            		    }
 		</script>
+
 <%--		<script>--%>
 <%--			var totalPages = ${model.totalPage};--%>
 <%--			var currentPage = ${model.page};--%>

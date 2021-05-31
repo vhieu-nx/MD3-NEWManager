@@ -26,7 +26,8 @@ public class CategoryDAO extends AbstractDAO<CategoryModel> implements ICategory
 
 	@Override
 	public List<CategoryModel> findAll() {
-		return null;
+		String sql = "SELECT * FROM category";
+		return query(sql, new CategoryMapper());
 	}
 
 	@Override

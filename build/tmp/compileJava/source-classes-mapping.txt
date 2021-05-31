@@ -8,8 +8,8 @@ com/codegym/dao/impl/AbstractDAO.java
  com.codegym.dao.impl.AbstractDAO
 com/codegym/model/AbstractModel.java
  com.codegym.model.AbstractModel
-com/codegym/service/ICategoryService.java
- com.codegym.service.ICategoryService
+com/codegym/service/impl/NewService.java
+ com.codegym.service.impl.NewService
 com/codegym/mapper/UserMapper.java
  com.codegym.mapper.UserMapper
 com/codegym/utils/HttpUtil.java
@@ -46,8 +46,8 @@ com/codegym/paging/PageRequest.java
  com.codegym.paging.PageRequest
 com/codegym/sort/Sorter.java
  com.codegym.sort.Sorter
-com/codegym/controller/web/HomeController.java
- com.codegym.controller.web.HomeController
+com/codegym/controller/admin/api/NewAPI.java
+ com.codegym.controller.admin.api.NewAPI
 com/codegym/service/INewService.java
  com.codegym.service.INewService
 com/codegym/dao/INewDAO.java
@@ -60,11 +60,13 @@ com/codegym/dao/IUserDAO.java
  com.codegym.dao.IUserDAO
 com/codegym/dao/impl/CategoryDAO.java
  com.codegym.dao.impl.CategoryDAO
-com/codegym/service/impl/NewService.java
- com.codegym.service.impl.NewService
-com/codegym/service/impl/CategoryService.java
- com.codegym.service.impl.CategoryService
 com/codegym/dao/ICategoryDAO.java
  com.codegym.dao.ICategoryDAO
+com/codegym/service/impl/CategoryService.java
+ com.codegym.service.impl.CategoryService
+com/codegym/controller/web/HomeController.java
+ com.codegym.controller.web.HomeController
+com/codegym/service/ICategoryService.java
+ com.codegym.service.ICategoryService
 com/codegym/controller/admin/NewController.java
  com.codegym.controller.admin.NewController

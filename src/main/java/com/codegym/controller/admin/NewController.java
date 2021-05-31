@@ -4,6 +4,7 @@ import com.codegym.constant.SystemConstant;
 import com.codegym.model.NewModel;
 import com.codegym.paging.PageRequest;
 import com.codegym.paging.Pageble;
+import com.codegym.service.ICategoryService;
 import com.codegym.service.INewService;
 import com.codegym.sort.Sorter;
 import com.codegym.utils.FormUtil;
@@ -21,12 +22,15 @@ import java.io.IOException;
 public class NewController extends HttpServlet {
 	@Inject
 	private INewService newService;
+	@Inject
+	private ICategoryService categoryService;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//refactor dung FormUtils
 		NewModel model = FormUtil.toModel(NewModel.class, request);
-//		if (model.getType().equals(SystemConstant.LIST))
+		String views = "";
+		if (model.getType().equals(SystemConstant.LIST)){
 				//code chua refactor
 //				new NewModel();
 //		String page  = request.getParameter("page");
@@ -44,9 +48,22 @@ public class NewController extends HttpServlet {
 		model.setListResult(newService.findAll(pageble));
 		model.setTotalItem(newService.getTotalItem());
 		model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));
+//		request.setAttribute(SystemConstant.MODEL,model);
+		views = "/views/admin/new/list.jsp";
+
+		}else if (model.getType().equals(SystemConstant.EDIT)){
+			if (model.getId() !=null){
+				model = newService.findOne(model.getId());
+			}else {
+
+			}
+			request.setAttribute("categories",categoryService.findAll());
+			views = "/views/admin/new/edit.jsp";
+
+		}
 		request.setAttribute(SystemConstant.MODEL,model);
-		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/new/list.jsp");
-		rd.forward(request, response);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(views);
+		requestDispatcher.forward(request,response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
